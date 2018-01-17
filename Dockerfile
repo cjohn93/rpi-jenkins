@@ -9,7 +9,7 @@ ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
 
 # Enable cross build
-RUN ["cross-build-start"]
+# RUN ["cross-build-start"]
 
 # Install dependencies
 RUN apt-get update \
@@ -20,7 +20,7 @@ RUN apt-get update \
 RUN curl -fL -o /opt/jenkins.war https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/{$JENKINS_VERSION}/jenkins-war-{$JENKINS_VERSION}.war
 
 # Disable cross build
-RUN ["cross-build-end"]
+# RUN ["cross-build-end"]
 
 # Expose volume
 VOLUME ${JENKINS_HOME}
